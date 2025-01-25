@@ -1,6 +1,6 @@
 ![software-architecture.jpg](software-architecture.jpg)
 
-<h3 align="center">Software-Architecture</h3>
+<h3 align="center">Software Architecture</h3>
 <p align="center">
   Notes on Head First Software Architecture
 </p>
