@@ -25,6 +25,8 @@ Head First Software Architecture teaches how to think architecturally, by explai
 - [Chapter 9](#chapter-9)
 - [Chapter 10](#chapter-10)
 - [Chapter 11](#chapter-11)
+- [Chapter 12](#chapter-12)
+- [Chapter 13](#chapter-13)
 
 ---
 
@@ -76,7 +78,7 @@ When communicating with downstream services, we can usually use a publisher and 
 - Topic: broadcasting model. If another service wants to hear from the publisher, it subscribes to the publisher to receive the message.
 
 A queue, can work with customized messages for each consumer, and it is safer. We know who is the recipient. It needs close coupling and if a new consumer wants to get the messages that needs to be built.
-A topic is less safe, but can be extended more easily. It has low coupling, unlike the queue its hard to monitor though we do not know where the messages will go.
+A topic is less safe, but can be extended more easily. It has low coupling, unlike the queue it is hard to monitor though we do not know where the messages will go.
 
 ### Chapter 4
 
@@ -185,6 +187,24 @@ How micro should a microservice be? Not too small, like a grain of sand (Grains 
 | Scalability and throughput - do some parts of the service need to be more scalable than others?                      |                                                                                                     |
 
 With microservices, common logics (such as logging) lives in a shared library (deployed within the microservice as part of a JAR file) or shared service (a new and separate microservice).
-If we need to make a request that needs multiple microservices to be involved, it can either be carried out in a orchestration way (a new microservice is created calling all separate services in order) or choreography (existing microservices call each other).
+If we need to make a request that needs multiple microservices to be involved, it can either be carried out in an orchestration way (a new microservice is created calling all separate services in order) or choreography (existing microservices call each other).
 
 ### Chapter 11
+
+Reducing a customer's waiting time is called responsiveness. Handling more customers within a specific amount of time is called scalability. These two concepts are fundamental in event-driven architecture (EDA), which is about breaking up processing into separate services with each of those services performing its function at the same time by responding to an event. 
+In EDA, services communicate asynchronously through an event channel, meaning they do not wait for responses of other channels to complete their work.
+
+Events are a way for a service to let the rest of the system know something important has just happened. Events are the means of passing information to other services. Two important differences between events and messages:
+
+- Events are broadcast to other services using topics, whereas messages are sent to a single service using queues. 
+- Events always broadcast something that has already happened, whereas messages request something that needs to be done.
+
+EDA and microservices are not the same. For EDA databases across services can be shared. EDA responds to something that has happened, microservices responds to something that has to happen. Whereas EDA relies on async communication, microservices rely on sync communication. When combining the two, it is called event-driven microservices.
+
+### Chapter 12
+
+Make the Grade practice assignment.
+
+### Chapter 13
+
+Appendix.
