@@ -122,7 +122,7 @@ There are different types of architectures:
 |-------------|----------------------|------------------|
 | Monolith    | Layered, microkernel | Modular monolith |
 | Distributed | Event-driven         | Microservices    |
-|             |                      |                  |
+
 (Top columns are related to partitioning, left rows are related to Deployment model)
 
 - In a technically partitioned architecture, we have separation of technical concerns (such as presentation, services, persistence).
